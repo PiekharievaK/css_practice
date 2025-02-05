@@ -107,7 +107,7 @@
 .card:hover .card__content {
   z-index: 1;
   background-color: #eee;
-  border-radius: 8px;
+  border-radius: 10px;
   margin: -12px;
   padding: 12px;
   transform: scale(1.2);
