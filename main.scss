@@ -1,1 +1,109 @@
+.page {
+  margin: 0;
+  padding: 50px 0 155px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  @media (min-width: 1000px) {
+    padding-bottom: 197px;
+  }
+}
 
+.page__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 40px 30px;
+  align-content: center;
+  justify-content: center;
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.card {
+  width: 200px;
+  height: 231px;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    transition: transform linear 100ms, opacity linear 100ms;
+  }
+
+  &__photo {
+    position: relative;
+    margin-bottom: 8px;
+
+    & img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transition: border-radius linear 1s;
+    }
+  }
+
+  &__rank {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 7px 12px;
+    font-weight: 700;
+    color: #8b0000;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &__name {
+    color: #2f4f4f;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 9px;
+  }
+
+  &__details {
+    text-align: center;
+  }
+
+  &__extra {
+    display: none;
+  }
+
+  &__sport::after {
+    content: ",";
+  }
+
+  &__pay::before {
+    content: "$";
+  }
+  &__pay::after {
+    content: "M";
+  }
+
+  &:hover {
+    height: auto;
+
+    .card__content {
+      padding: 12px;
+      margin: -12px;
+      background-color: #eee;
+      border-radius: 8px;
+      transform: scale(1.2);
+      z-index: 1;
+    }
+
+    .card__photo {
+      border-radius: 25%;
+      & img {
+        border-radius: 25%;
+      }
+    }
+
+    .card__extra {
+      display: block;
+    }
+  }
+}
